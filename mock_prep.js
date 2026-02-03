@@ -45,7 +45,7 @@ const optionsDiv = document.getElementById("options");
 function loadQuestion() {
   
  if(ques===1){q=question.day1[currentQuestion];day=question.day1; }
-if (ques===2) {q=question.day2[currentQuestion]}
+if (ques===2) {q=question.day2[currentQuestion];day=question.day2;}
 
   qNumber.textContent = `Question ${currentQuestion + 1}`;
   qText.textContent = q.question;
