@@ -82,7 +82,6 @@ const finish=document.getElementById("finish")
 next.addEventListener("click", () => {
   if (currentQuestion < 99) {
     currentQuestion++;
-    console.log(currentQuestion);
     loadQuestion();
   } else {
     start.style.display="none";
