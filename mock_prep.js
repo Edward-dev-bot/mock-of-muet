@@ -4,7 +4,7 @@ let currentQuestion = 0;
 let userAnswers=null;
 let q=null;
 let ques=null;
-let day=null;
+let day=[99].fill(null);
 const qNumber = document.getElementById("q-number");
 //list shows
 
@@ -33,7 +33,6 @@ phylist.addEventListener("click", ()=>{
  
 //questions days
 document.getElementById("1mcqs_items").addEventListener("click",()=>{
-  
   ques=1;
 })
 document.getElementById("2mcqs_items").addEventListener("click",()=>{
@@ -46,7 +45,7 @@ const optionsDiv = document.getElementById("options");
 function loadQuestion() {
   
  if(ques===1){q=question.day1[currentQuestion];day=question.day1; }
-if (ques===2) {q=question.day2[currentQuestion]}
+if (ques===2) {q=question.day2[currentQuestion];day=question.day2;}
 
   qNumber.textContent = `Question ${currentQuestion + 1}`;
   qText.textContent = q.question;
@@ -125,7 +124,7 @@ function calculateScore() {
   let score = 0;
 
   day.forEach((q, index) => {
-    if (userAnswers[index] === q.answer) {
+    if (userAnswers[index] === q.answers) {
       score++;
     }
   });
