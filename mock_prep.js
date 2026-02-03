@@ -28,7 +28,7 @@ document.getElementById("chem").addEventListener("click", () => {
 const phylist = document.getElementById("phy-list");
 phylist.addEventListener("click", ()=>{
   question=physics;
-  userAnswers= new Array(question.day1.length).fill(null);
+  userAnswers= new Array(physics.day1.length).fill(null);
 })
  
 //questions days
@@ -45,7 +45,7 @@ const optionsDiv = document.getElementById("options");
 function loadQuestion() {
   
  if(ques===1){q=question.day1[currentQuestion];day=question.day1; }
-if (ques===2) {q=question.day2[currentQuestion];day=question.day2;}
+if (ques===2) {q=question.day2[currentQuestion]}
 
   qNumber.textContent = `Question ${currentQuestion + 1}`;
   qText.textContent = q.question;
@@ -80,7 +80,7 @@ const next=document.getElementById("next")
 const start=document.getElementById("start")
 const finish=document.getElementById("finish")
 next.addEventListener("click", () => {
-  if (currentQuestion < 100 - 1) {
+  if (currentQuestion < 10 - 1) {
     currentQuestion++;
     console.log(currentQuestion);
     loadQuestion();
@@ -96,11 +96,12 @@ report.addEventListener("click",() => {
 
 
 let timeLeft = 60 * 60; // 60 minutes in seconds
-const por = document.getElementById("por");
+const por=document.getElementById("por");
 const timerEl = document.getElementById("timer");
 timerEl.addEventListener("click",()=>{
   startTimer();
   por.style.display="flex";
+  
 })
 
 function startTimer(){
