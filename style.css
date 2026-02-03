@@ -1,0 +1,228 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 100vw;
+    background-image: url(./oynO57.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.home{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 100px;
+    font-size: larger;
+    color: white;
+}
+.rsult{
+    width: 100%;
+    padding: 50px;
+    box-sizing: border-box;
+    color: white;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    gap: 50px;
+    padding: 50px;
+    background-color: rgba(225, 225, 225, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+.header{    
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100% ;
+}
+.header h2 , ul{
+    padding: 0px 10px;
+}
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+li{
+    margin: 10px;
+}
+a{
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+    padding: 5px;
+}
+a:hover{
+    transform: scale(1.1);
+    
+    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.3);
+}
+.main{
+    
+    align-self: center;
+    justify-self: center;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    gap: 50px;
+}
+.useful{
+    height: 50px ;
+    width: 150px;
+    border-radius: 5px;
+    border: 2px solid black;
+    color: white;
+    background-color: rgba(43, 147, 155, 0.534);
+    font-size: large;
+    transition: 0.3s;
+}
+ .useful:hover{
+    transform: scale(1.1);
+    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+}
+.subject{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 50px;
+    font-size: larger;
+    color: white;
+    gap: 20px;
+}
+.sub{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.sub-list{
+    padding: 50px;
+    box-sizing: border-box;
+    width: 100%;
+}
+.sub-H{
+    margin: 10px;
+    border: 2px solid white;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    cursor: pointer;
+}
+
+.mcqs-list{
+    flex-wrap: wrap;
+}
+.mcqs-list li{
+    height: 100px;
+    width: 100px;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+.mcqs-list li:hover{
+    transform: scale(0.9);
+    box-shadow: inset 5px 5px 10px 0  rgba(0, 0, 0, 0.3);
+}
+.test{
+    font-size: x-large;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 50px;
+}
+.test-start{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    gap: 50px;
+    height: auto;
+    border: 2px solid black;
+    box-sizing: border-box;
+    padding: 50px;
+}
+.test-por{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
+.por-por{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 50px;
+}
+.tick{
+    align-self: flex-start;
+    height: 40px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 5px ;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.test-por button{
+    height: 50px;
+    width: 100px;
+    gap: 30px;
+    color: black;
+    border-radius: 5px;
+    background-color: rgba(43, 147, 155, 0.534);
+    transition: 0.3s;
+    font-size: large;
+}
+.test-por button:hover{
+    transform: scale(1.1);
+    box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.3);
+}
+.test-finish{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+
