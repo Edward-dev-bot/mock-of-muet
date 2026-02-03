@@ -97,9 +97,11 @@ report.addEventListener("click",() => {
 
 
 let timeLeft = 60 * 60; // 60 minutes in seconds
+const por = document.getElementById("por");
 const timerEl = document.getElementById("timer");
 timerEl.addEventListener("click",()=>{
   startTimer();
+  por.style.display="flex";
 })
 
 function startTimer(){
