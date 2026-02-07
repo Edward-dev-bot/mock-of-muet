@@ -4,7 +4,7 @@ let currentQuestion = 0;
 let userAnswers=null;
 let q=null;
 let ques=null;
-let day=[99].fill(null);
+let day=null;
 const qNumber = document.getElementById("q-number");
 //list shows
 
@@ -28,15 +28,40 @@ document.getElementById("chem").addEventListener("click", () => {
 const phylist = document.getElementById("phy-list");
 phylist.addEventListener("click", ()=>{
   question=physics;
-  userAnswers= new Array(physics.day1.length).fill(null);
+  userAnswers= new Array(question.day1.length).fill(null);
 })
  
 //questions days
 document.getElementById("1mcqs_items").addEventListener("click",()=>{
+  
   ques=1;
 })
 document.getElementById("2mcqs_items").addEventListener("click",()=>{
   ques=2;
+})
+document.getElementById("3mcqs_items").addEventListener("click",()=>{
+  ques=3;
+})
+document.getElementById("4mcqs_items").addEventListener("click",()=>{
+  ques=4;
+})
+document.getElementById("5mcqs_items").addEventListener("click",()=>{
+  ques=5;
+})
+document.getElementById("6mcqs_items").addEventListener("click",()=>{
+  ques=6;
+})
+document.getElementById("7mcqs_items").addEventListener("click",()=>{
+  ques=7;
+})
+document.getElementById("8mcqs_items").addEventListener("click",()=>{
+  ques=8;
+})
+document.getElementById("9mcqs_items").addEventListener("click",()=>{
+  ques=9;
+})
+document.getElementById("10mcqs_items").addEventListener("click",()=>{
+  ques=10;
 })
 
 const qText = document.getElementById("question-text");
@@ -44,8 +69,16 @@ const optionsDiv = document.getElementById("options");
 
 function loadQuestion() {
   
- if(ques===1){q=question.day1[currentQuestion];day=question.day1; }
-if (ques===2) {q=question.day2[currentQuestion];day=question.day2;}
+ if(ques===1){q=question.day1[currentQuestion] }
+if (ques===2) {q=question.day2[currentQuestion]}
+if (ques===2) {q=question.day3[currentQuestion]}
+if (ques===2) {q=question.day4[currentQuestion]}
+if (ques===2) {q=question.day5[currentQuestion]}
+if (ques===2) {q=question.day6[currentQuestion]}
+if (ques===2) {q=question.day7[currentQuestion]}
+if (ques===2) {q=question.day8[currentQuestion]}
+if (ques===2) {q=question.day9[currentQuestion]}
+if (ques===2) {q=question.day10[currentQuestion]}
 
   qNumber.textContent = `Question ${currentQuestion + 1}`;
   qText.textContent = q.question;
@@ -80,8 +113,9 @@ const next=document.getElementById("next")
 const start=document.getElementById("start")
 const finish=document.getElementById("finish")
 next.addEventListener("click", () => {
-  if (currentQuestion < 99) {
+  if (currentQuestion < 10 - 1) {
     currentQuestion++;
+    console.log(currentQuestion);
     loadQuestion();
   } else {
     start.style.display="none";
@@ -95,12 +129,9 @@ report.addEventListener("click",() => {
 
 
 let timeLeft = 60 * 60; // 60 minutes in seconds
-const por=document.getElementById("por");
 const timerEl = document.getElementById("timer");
 timerEl.addEventListener("click",()=>{
   startTimer();
-  por.style.display="flex";
-  
 })
 
 function startTimer(){
@@ -124,7 +155,7 @@ function calculateScore() {
   let score = 0;
 
   day.forEach((q, index) => {
-    if (userAnswers[index] === q.answers) {
+    if (userAnswers[index] === q.answer) {
       score++;
     }
   });
