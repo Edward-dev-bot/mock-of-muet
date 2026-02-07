@@ -1,5 +1,5 @@
 import * as physics from './physics-ques.js'
-let question=null;
+
 let currentQuestion = 0;
 let userAnswers=null;
 let q=null;
@@ -7,7 +7,6 @@ let ques=null;
 let day=null;
 const qNumber = document.getElementById("q-number");
 //list shows
-
 const phy=document.getElementById("phy-list");
 document.getElementById("phy").addEventListener("click", () => {
   phy.classList.toggle("show");
@@ -27,59 +26,57 @@ document.getElementById("chem").addEventListener("click", () => {
 //question from files
 const phylist = document.getElementById("phy-list");
 phylist.addEventListener("click", ()=>{
-  question=physics;
-  userAnswers= new Array(question.day1.length).fill(null);
-})
+  userAnswers= new Array(physics.day1.length).fill(null);
+});
  
 //questions days
 document.getElementById("1mcqs_items").addEventListener("click",()=>{
-  
   ques=1;
-})
+});
 document.getElementById("2mcqs_items").addEventListener("click",()=>{
   ques=2;
-})
+});
 document.getElementById("3mcqs_items").addEventListener("click",()=>{
   ques=3;
-})
+});
 document.getElementById("4mcqs_items").addEventListener("click",()=>{
   ques=4;
-})
+});
 document.getElementById("5mcqs_items").addEventListener("click",()=>{
   ques=5;
-})
+});
 document.getElementById("6mcqs_items").addEventListener("click",()=>{
   ques=6;
-})
+});
 document.getElementById("7mcqs_items").addEventListener("click",()=>{
   ques=7;
-})
+});
 document.getElementById("8mcqs_items").addEventListener("click",()=>{
   ques=8;
-})
+});
 document.getElementById("9mcqs_items").addEventListener("click",()=>{
   ques=9;
-})
+});
 document.getElementById("10mcqs_items").addEventListener("click",()=>{
   ques=10;
-})
+});
 
 const qText = document.getElementById("question-text");
 const optionsDiv = document.getElementById("options");
 
 function loadQuestion() {
   
- if(ques===1){q=question.day1[currentQuestion] }
-if (ques===2) {q=question.day2[currentQuestion]}
-if (ques===2) {q=question.day3[currentQuestion]}
-if (ques===2) {q=question.day4[currentQuestion]}
-if (ques===2) {q=question.day5[currentQuestion]}
-if (ques===2) {q=question.day6[currentQuestion]}
-if (ques===2) {q=question.day7[currentQuestion]}
-if (ques===2) {q=question.day8[currentQuestion]}
-if (ques===2) {q=question.day9[currentQuestion]}
-if (ques===2) {q=question.day10[currentQuestion]}
-
+if (ques===1) {q=physics.day1[currentQuestion] }
+if (ques===2) {q=physics.day2[currentQuestion]}
+if (ques===3) {q=physics.day3[currentQuestion]}
+if (ques===4) {q=physics.day4[currentQuestion]}
+if (ques===5) {q=physics.day5[currentQuestion]}
+if (ques===6) {q=physics.day6[currentQuestion]}
+if (ques===7) {q=physics.day7[currentQuestion]}
+if (ques===8) {q=physics.day8[currentQuestion]}
+if (ques===9) {q=physics.day9[currentQuestion]}
+if (ques===10) {q=physics.day10[currentQuestion]}
+  
   qNumber.textContent = `Question ${currentQuestion + 1}`;
   qText.textContent = q.question;
 
@@ -108,12 +105,11 @@ if (ques===2) {q=question.day10[currentQuestion]}
 }
 
 
-
 const next=document.getElementById("next")
 const start=document.getElementById("start")
 const finish=document.getElementById("finish")
 next.addEventListener("click", () => {
-  if (currentQuestion < 10 - 1) {
+  if (currentQuestion < 100 - 1) {
     currentQuestion++;
     console.log(currentQuestion);
     loadQuestion();
@@ -127,11 +123,14 @@ report.addEventListener("click",() => {
   finishTest();
 });
 
+const show = document.getElementById("por");
 
 let timeLeft = 60 * 60; // 60 minutes in seconds
 const timerEl = document.getElementById("timer");
 timerEl.addEventListener("click",()=>{
   startTimer();
+  show.style.display="flex";
+  loadQuestion();
 })
 
 function startTimer(){
@@ -148,7 +147,7 @@ function startTimer(){
       finishTest();
     }
   }, 1000);
-  loadQuestion();
+  
 }
 
 function calculateScore() {
