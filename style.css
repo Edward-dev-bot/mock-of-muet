@@ -181,7 +181,7 @@ a:hover{
     gap: 10px;
 }
 .por-por{
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -225,4 +225,3 @@ a:hover{
 .show{
     display: block;
 }
-
