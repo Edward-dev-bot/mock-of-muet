@@ -139,7 +139,7 @@ const next=document.getElementById("next")
 const start=document.getElementById("start")
 const finish=document.getElementById("finish")
 next.addEventListener("click", () => {
-  if (currentQuestion < 1 - 1) {
+  if (currentQuestion < 100 - 1) {
     currentQuestion++;
     console.log(currentQuestion);
     loadQuestion();
