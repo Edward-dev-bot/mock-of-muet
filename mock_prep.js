@@ -139,7 +139,7 @@ const next=document.getElementById("next")
 const start=document.getElementById("start")
 const finish=document.getElementById("finish")
 next.addEventListener("click", () => {
-  if (currentQuestion < 100 - 1) {
+  if (currentQuestion < 10 - 1) {
     currentQuestion++;
     console.log(currentQuestion);
     loadQuestion();
@@ -183,7 +183,7 @@ function startTimer(){
 function calculateScore() {
   let score = 0;
 
-  day.forEach((q, index) => {
+  questions.forEach((q, index) => {
     if (userAnswers[index] === q.answer) {
       score++;
     }
